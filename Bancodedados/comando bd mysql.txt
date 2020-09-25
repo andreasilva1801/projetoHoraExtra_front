@@ -1,0 +1,88 @@
+create database projetohoraextra;
+
+use projetohoraextra;
+select * from projetohoraextra.itmn232_usuario;
+insert into projetohoraextra.itmn232_usuario values
+(null, 'isidro@isidro.com', 1,
+   'https://avatars2.githubusercontent.com/u/6184696?s=460&v=4',
+   'Professor Isidro' , '1234567','1234');
+  
+insert into itmn232_usuario values
+(null, 'pedro@pedro.com', 0,
+   '', 'Pedro Developer', '1234568', '1234');
+  
+insert into itmn232_usuario values
+(null, 'ana@ana.com' , 0, '', 'Ana Designer', '1234569', '1234');
+
+select * from projetohoraextra.itmn232_atividades;
+
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Execução de Mudança PLanejada');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Acionamento por Mudança');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Acionamento por Incidente');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Acionamento Indevido');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Cobertura de Turnos');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Cancelamento de Rotina Batch');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Teste de Continuidade');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Sustentação e Operação 24x7');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Implantação de Projeto');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'War Room');
+insert into projetohoraextra.itmn232_atividades values
+(null, 'Top TI');
+
+select * from projetohoraextra.itmn232_usuario;
+select * from projetohoraextra.itmn232_atividades;
+select * from projetohoraextra.itmn232_ocorrencia;
+
+create table projetohoraextra.itmn232_ocorrencia(
+	num_seq integer not null auto_increment,
+    id_usuario integer not null,
+    id_atividade integer not null,
+    descricao text(300),
+    data_oc date,
+    num_horas time,
+    ponto_manual integer,
+    status_oc integer,
+    
+    constraint pk_oc primary key (num_seq),
+    constraint fk_us foreign key (id_usuario) references projetohoraextra.itmn232_usuario(id_usuario) on delete no action on update no action,
+    constraint fk_at foreign key (id_atividade) references projetohoraextra.itmn232_atividades(id_atividade)on delete no action on update no action
+) engine = MyISAM;
+    
+select * from projetohoraextra.itmn232_ocorrencia;
+    
+insert into projetohoraextra.itmn232_ocorrencia values
+(null, 1, 10, '', '2020-09-08','02:30', 0, 0);
+
+alter table projetohoraextra.itmn232_ocorrencia drop column num_hora;
+
+update projetohoraextra.itmn232_usuario set link_foto = 'https://akns-images.eonline.com/eol_images/Entire_Site/2017717/rs_634x953-170817075651-634.thor-ragnarok-1.81717.jpg?fit=around|552:auto&output-quality=90&crop=552:auto;center,top'
+where id_usuario = '2';
+
+update projetohoraextra.itmn232_usuario set link_foto = 'https://midias.agazeta.com.br/2019/10/08/a-apresentadora-ana-maria-braga-no-mais-voce-programa-que-comanda-diariamente-na-globo-63036-article.jpg'
+where id_usuario = '3';
+select * from projetohoraextra.itmn232_usuario;
+
+
+select * from projetohoraextra.itmn232_ocorrencia;
+alter table projetohoraextra.itmn232_ocorrencia modify column num_horas varchar(10);
+
+https://akns-images.eonline.com/eol_images/Entire_Site/2017717/rs_634x953-170817075651-634.thor-ragnarok-1.81717.jpg?fit=around|552:auto&output-quality=90&crop=552:auto;center,top
+
+insert into projetohoraextra.itmn232_ocorrencia values
+(null, 2, 8, '', '2020-09-09','01:30', 0,1);
+
+ 
+
+
+insert into projetohoraextra.itmn232_ocorrencia values
+(null, 3, 3, '', '2020-09-09','02:00', 0,1);

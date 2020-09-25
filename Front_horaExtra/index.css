@@ -1,0 +1,42 @@
+body{
+	background-image: url('../Front_horaExtra/imagem/internet-empresarial-.jpg');
+	background-repeat: no-repeat;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+
+
+}
+
+
+#formcpf{
+
+	margin-top: 5%;
+	padding: 5%;
+
+	background-color: white;
+	border-radius: 15px;
+}
+
+.container{
+    background-color: nocolor;
+}
+
+.Titulo{
+    font-size: 30px;
+    font-family: Fantasy, Geneva, Tahoma, sans-serif;
+    color:#ffffff;
+}
+
+.fonte1{
+    font-size: 20px;
+    text-align: center;
+    font-family: Garamond, Geneva, Tahoma, sans-serif;
+    color:#ffffff;
+}
+
+.fonte2{
+    font-size: 16px;
+    font-family: Garamond, Geneva, Tahoma, sans-serif;
+    color:#ffffff;
+}
